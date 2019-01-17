@@ -1,0 +1,37 @@
+<apex:page controller="ProductListController" showHeader="false">
+    <apex:form >
+    	<apex:pageBlock >
+            
+        	<apex:pageBlockSection title="UserList">
+            	<apex:selectList size="1" value="{!SelectedUser}">
+                    <apex:selectOptions value="{!cartUserList}" />    
+                </apex:selectList> 
+            </apex:pageBlockSection> 
+            <apex:outputPanel id="pbId">
+            	<apex:pageBlockSection title="Product List" >
+                    <apex:pageBlockTable value="{!productList}" var="p">
+                        <apex:column >
+                            <apex:commandLink value="{!p.Name}" action="{!getProductDetailPage}" >
+                                <apex:param name="detailid" value="{!p.Id}"/>
+                            </apex:commandLink>
+                        </apex:column>
+                        <apex:column value="{!p.Price__c}"/>
+                        <apex:column >
+                            <apex:commandLink value="Add" action="{!saveIntoCart}" reRender="Cart">
+                                <apex:param name="pid1" value="{!p.Id}"></apex:param>
+                            </apex:commandLink>
+                        </apex:column>
+                	</apex:pageBlockTable>
+                </apex:pageBlockSection>
+                <apex:commandButton status="fetchStatus" reRender="pbId" value="Previous" action="{!setCon.previous}" disabled="{!NOT(setCon.hasPrevious)}" title="Previous  Page"/>
+                <apex:commandButton status="fetchStatus" reRender="pbId" value="Next" action="{!setCon.next}"  disabled="{!NOT(setCon.hasNext)}" title="Next Page"/>
+            	
+            </apex:outputPanel>
+            <apex:pageBlockSection title="View Cart">
+            	<apex:commandButton value="View Cart" action="{!viewCart}"/>
+            </apex:pageBlockSection>
+
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>
