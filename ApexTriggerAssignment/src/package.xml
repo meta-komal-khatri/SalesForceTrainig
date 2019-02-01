@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>ClassOnDeleteTrigger</members>
+        <members>DeleteOppProductTrigger</members>
+        <members>StudentTrigger</members>
+        <members>SubjectHindiTeacherTrigger</members>
+        <members>UpdateCloseDateForStageOppTrigger</members>
+        <members>UpdateMyCountInClassTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>UpdateCloseDateForStageOppTriggerTest</members>
+        <name>ApexClass</name>
+    </types>
+    <version>38.0</version>
+</Package>
