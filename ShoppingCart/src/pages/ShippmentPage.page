@@ -7,7 +7,7 @@
                 <apex:inputField value="{!contact.Email}"/>
                 <apex:inputField value="{!contact.MobilePhone}"/>
             </apex:pageBlockSection>
-            <apex:commandButton value="Place Order" action="{!order}"  />
+            <apex:commandButton value="Place Order" action="{!placeOrder}"  />
         </apex:pageBlock>
     </apex:form>
 </apex:page>
